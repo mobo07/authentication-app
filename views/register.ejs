@@ -1,0 +1,50 @@
+<%- include('partials/header') -%>
+
+<main class="register-container">
+  <section>
+    <h2 class="section-header">
+      Join thousands of learners from around the world
+    </h2>
+    <p class="section-description">
+      Master web development by making real-life projects. There are multiple
+      paths for you to choose
+    </p>
+  </section>
+  <form action="/register" method="POST">
+    <div class="email-input user-input">
+      <i class="fa-solid fa-envelope"></i>
+      <input
+        type="email"
+        name="username"
+        placeholder="Email"
+        autocomplete="none"
+      />
+    </div>
+    <div class="password-input user-input">
+      <i class="fa-solid fa-lock"></i>
+      <input type="password" name="password" placeholder="Password" />
+      <span>show</span>
+    </div>
+    <button type="submit" class="submit-btn">Start coding now</button>
+  </form>
+  <section class="socials">
+    <p>or continue with these social profile</p>
+    <div class="social-icons">
+      <div class="social-icon">
+        <a href="/auth/google"
+          ><img src="assets/Google.svg" alt="google-icon"
+        /></a>
+      </div>
+      <div class="social-icon">
+        <a href="/auth/github"
+          ><img src="assets/Gihub.svg" alt="github-icon"
+        /></a>
+      </div>
+    </div>
+    <p>
+      Already a member?
+      <span><a class="login-btn" href="login">Login</a></span>
+    </p>
+  </section>
+</main>
+<%- include('partials/footer') -%>

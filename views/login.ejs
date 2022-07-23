@@ -1,0 +1,44 @@
+<%- include('partials/header') -%>
+
+<main>
+  <section>
+    <h2 class="section-header">Login</h2>
+  </section>
+  <form action="/login" method="POST">
+    <div class="email-input user-input">
+      <i class="fa-solid fa-envelope"></i>
+      <input
+        type="email"
+        name="username"
+        placeholder="Email"
+        autocomplete="none"
+      />
+    </div>
+    <div class="password-input user-input">
+      <i class="fa-solid fa-lock"></i>
+      <input type="password" name="password" placeholder="Password" />
+      <span>show</span>
+    </div>
+    <button type="submit" class="submit-btn">Start coding now</button>
+  </form>
+  <section class="socials">
+    <p>or continue with these social profile</p>
+    <div class="social-icons">
+      <div class="social-icon">
+        <a href="/auth/google"
+          ><img src="assets/Google.svg" alt="google-icon"
+        /></a>
+      </div>
+      <div class="social-icon">
+        <a href="/auth/github"
+          ><img src="assets/Gihub.svg" alt="github-icon"
+        /></a>
+      </div>
+    </div>
+    <p>
+      Don't have an account yet?
+      <span><a class="login-btn" href="register">Register</a></span>
+    </p>
+  </section>
+</main>
+<%- include('partials/footer') -%>

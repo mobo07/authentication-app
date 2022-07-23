@@ -1,0 +1,97 @@
+<%- include("partials/profileHeader") -%>
+
+<!-- <div class="profile-container"> -->
+
+  <main id="user-profile">
+    <div class="personal-info show-personal-info">
+      <section class="top-section">
+        <h1>Personal Info</h1>
+        <p>Basic info, like your name and photo</p>
+      </section>
+      <section class="edit-profile-section">
+        <div class="edit-profile-top">
+          <div class="edit-profile-left">
+            <h1>Profile</h1>
+            <p>Some info may be visible to <br> other people</p>
+          </div>
+          <button class="edit-btn" type="button" name="button">Edit</button>
+        </div>
+        <div class="user-details">
+          <div class="detail name-detail">
+            <span>NAME</span>
+            <p><%= name %></p>
+          </div>
+          <div class="detail bio-detail">
+            <span>BIO</span>
+            <p><%= bio %></p>
+          </div>
+          <div class="detail email-detail">
+            <span>EMAIL</span>
+            <p><%= email %></p>
+          </div>
+          <div class="detail password-detail">
+            <span>PASSWORD</span>
+            <p>*********</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  
+    <section class="change-info-section">
+      <div class="back">
+        <span><i class="fa-solid fa-angle-left"></i></span>
+        <p>Back</p>
+      </div>
+    
+      <div class="change-info">
+        <div class="change-info-top">
+          <h1>Change Info</h1>
+          <p>Changes will be reflected to every services</p>
+        </div>
+    
+        <form class="" action="/profile" method="post" enctype="multipart/form-data">
+          <div class="change-photo">
+            <label for="photo-input">
+              <div class="profile-photo">
+                <% if(profilePhoto.contentType != null && profilePhoto.data != null) { %>
+                  <img src="data:<%=profilePhoto.contentType%>;base64,<%=profilePhoto.data.toString('base64')%>" alt="">
+                <% } %>
+              </div> 
+              <i class="fa-solid fa-camera"></i>
+            </label>
+            <input id="photo-input" type="file" name="profilePhoto" value="">
+            <p>CHANGE PHOTO</p>
+          </div>
+          <label for="">Name
+            <input class="profile-input" type="text" name="name" value="<%= name %>" placeholder="Enter your name...">
+          </label>
+          <label for="">Bio
+            <textarea class="profile-input" name="bio" rows="8" cols="80" placeholder="Enter your bio..."><%= bio %></textarea>
+          </label>
+          <label for="">Phone
+            <input class="profile-input" type="text" name="phone" value="<%= phone %>" placeholder="Enter your phone...">
+          </label>
+          <label for="">Email
+            <input class="profile-input" type="email" name="username" value="<%= email %>" placeholder="Enter your email...">
+          </label>
+          <fieldset>
+          <legend>Change Password</legend>
+              <div class="password-input user-input">
+                <input type="password" name="oldPassword" placeholder="Old Password" autocomplete="none">
+                <span>show</span>
+          </div>
+  
+            <div class="password-input user-input">
+              <input type="password" name="newPassword" placeholder="New Password" autocomplete="none">
+              <span>show</span>
+        </div>
+        </fieldset>
+          <button type="submit" class="save-btn">Save</button>
+        </form>
+      </div>
+    </section>
+  
+  </main>
+<!-- </div> -->
+</body>
+</html>
