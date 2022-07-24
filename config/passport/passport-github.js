@@ -8,7 +8,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
-      callbackURL: "http://localhost:3000/auth/github/profile",
+      callbackURL: "https://mysterious-springs-77605.herokuapp.com/auth/github/profile",
     },
     (accessToken, refreshToken, profile, cb) => {
       User.findOne({ githubId: profile.id }).then((user) => {
